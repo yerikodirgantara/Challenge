@@ -1,0 +1,19 @@
+Cara Menggunakan Filenya:
+
+Run ke 2 file menggunakan VSC. note: menggunakan 2 Visual Studio Code, satu membuka file frontend, satunya membuka file backend
+
+Jangan lupa pada frontend npm install terlebih dulu
+
+Untuk Run frontend: npm run dev Untuk Run backend: php artisan serve
+
+Pada saat run dev, Akan run di http://localhost:5173/
+
+Jika ingin pindah ke admin: http://localhost:5173/admin
+
+Untuk database ada di dalam folder Challenge ini
+
+Kekurangan:
+
+Belum ada Auth Admin
+
+Belum terlalu kompleks
