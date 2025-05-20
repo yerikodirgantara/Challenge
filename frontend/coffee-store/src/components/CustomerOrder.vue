@@ -91,7 +91,7 @@
             <p class="card-text fst-italic">"Tempatnya nyaman, pilihan menunya banyak, dan suasananya bikin betah berlama-lama."</p>
           </div>
           <div class="card-footer bg-transparent border-0 fw-semibold">
-            Sarah Anderson
+            Sarah
           </div>
         </div>
       </div>
@@ -446,7 +446,7 @@ function closeModal() {
   if (bsModal) bsModal.hide()
 }
 
-// ✅ Perbaikan di sini: izinkan produk yang sama ditambahkan lebih dari sekali
+// function produk yang sama ditambahkan lebih dari sekali
 function selectProduct(product) {
   selectedProducts.value.push({ ...product }) // Salin agar dianggap objek baru meskipun ID sama
 }

@@ -68,6 +68,7 @@ import axios from 'axios'
 
 const orders = ref([])
 
+//GET Produk dari database
 const fetchOrders = async () => {
   try {
     const res = await axios.get('http://localhost:8000/api/orders')
@@ -77,6 +78,7 @@ const fetchOrders = async () => {
   }
 }
 
+//PUT Produk untuk menandai Lunas
 const markAsPaid = async (id) => {
   try {
     await axios.put(`http://localhost:8000/api/orders/${id}`)
@@ -86,6 +88,7 @@ const markAsPaid = async (id) => {
   }
 }
 
+//DELETE Produk
 const deleteOrder = async (id) => {
   try {
     await axios.delete(`http://localhost:8000/api/orders/${id}`)
@@ -95,7 +98,7 @@ const deleteOrder = async (id) => {
   }
 }
 
-// Format waktu pesan jadi "HH:mm:ss" dengan GMT+7 (WIB)
+// Format waktu WIB
 function formatOrderTime(isoString) {
   if (!isoString) return '-'
   const date = new Date(isoString)
