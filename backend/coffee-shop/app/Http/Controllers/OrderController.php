@@ -21,9 +21,13 @@ class OrderController extends Controller
             'items' => 'required|array',
             'items.*.name' => 'required|string',
             'items.*.price' => 'required|numeric',
+            'items.*.quantity' => 'required|integer|min:1',
         ]);
 
-        $total = collect($validated['items'])->sum('price');
+        // Hitung total dengan quantity
+        $total = collect($validated['items'])->reduce(function ($sum, $item) {
+            return $sum + ($item['price'] * $item['quantity']);
+        }, 0);
 
         $order = Order::create([
             'table_number' => $validated['table_number'],

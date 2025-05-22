@@ -10,10 +10,11 @@
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-1">
           <div>
-            <h5 class="card-title mb-0 text-primary">{{ order.customer_name }}</h5>
+            <!-- Jika tidak ada customer_name, bisa dihapus -->
+            <h5 class="card-title mb-0 text-primary">{{ order.customer_name || 'Pelanggan' }}</h5>
             <small class="text-secondary fst-italic">Meja: {{ order.table_number }}</small><br />
             <small class="text-secondary fst-italic">
-              Waktu Pesan: {{ formatOrderTime(order.order_time) }}
+              Waktu Pesan: {{ formatOrderTime(order.order_time || order.created_at) }}
             </small>
           </div>
           <span
@@ -30,14 +31,19 @@
             :key="item.name"
             class="list-group-item d-flex justify-content-between align-items-center px-0 border-0"
           >
-            <span>{{ item.name }}</span>
-            <span class="fw-semibold">Rp{{ item.price.toLocaleString() }}</span>
+            <span>
+              {{ item.name }}
+              <span v-if="item.quantity && item.quantity > 1" class="text-muted">x{{ item.quantity }}</span>
+            </span>
+            <span class="fw-semibold">
+              Rp{{ (item.price * (item.quantity || 1)).toLocaleString('id-ID') }}
+            </span>
           </li>
         </ul>
 
         <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
           <strong>Total:</strong>
-          <span class="fs-5 text-success fw-bold">Rp{{ order.total.toLocaleString() }}</span>
+          <span class="fs-5 text-success fw-bold">Rp{{ order.total.toLocaleString('id-ID') }}</span>
         </div>
 
         <div class="d-flex gap-2">

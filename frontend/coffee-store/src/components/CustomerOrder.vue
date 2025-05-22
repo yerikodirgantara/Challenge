@@ -79,308 +79,248 @@
       </div>
     </section>
 
-<!-- Testimonial Section -->
-<section id="testimonial" class="py-5 text-center bg-light">
-  <div class="container">
-    <h2 class="mb-5 fw-bold">Apa Kata Mereka</h2>
-    <div class="row justify-content-center g-4">
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Tempatnya nyaman, pilihan menunya banyak, dan suasananya bikin betah berlama-lama."</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 fw-semibold">
-            Sarah
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Kopi di sini benar-benar nikmat dan suasananya sangat nyaman untuk bekerja ataupun bersantai."</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 fw-semibold">
-            Dimas Pratama
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Pelayanan ramah, tempatnya estetik, dan varian minumannya sangat beragam. Pasti akan kembali lagi!"</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 fw-semibold">
-            Rina Maharani
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimoni tambahan -->
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Tempat favorit saya untuk ngopi pagi. Baristanya juga sangat berpengetahuan soal kopi."</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 fw-semibold">
-            Andi Wijaya
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Suka banget sama desain interiornya. Estetik banget buat foto-foto dan nongkrong bareng teman."</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 fw-semibold">
-            Melisa Putri
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Harga terjangkau tapi kualitas premium. Sangat direkomendasikan untuk para pecinta kopi!"</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 fw-semibold">
-            Budi Santoso
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Popular & New Sections -->
-<section id="popular" class="py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <!-- New Arrivals -->
-      <div class="col-md-6 mb-5">
-        <h4 class="fw-bold text-uppercase mb-4">Produk Baru</h4>
-        <div
-          class="d-flex align-items-center justify-content-between mb-3"
-          v-for="p in newProducts"
-          :key="p.id"
-        >
-          <div class="d-flex align-items-center">
-            <img
-              :src="getImgUrl(p.image)"
-              :alt="p.name"
-              class="rounded"
-              style="width: 50px; height: 50px; object-fit: cover; margin-right: 15px;"
-            />
-            <div>
-              <a
-                href="#"
-                class="fw-semibold text-decoration-none"
-                @click.prevent="openModal(p)"
-                style="cursor: pointer;"
-              >
-                {{ p.name }}
-              </a>
-              <div class="text-muted small">Kopi baru dengan cita rasa khas.</div>
-            </div>
-          </div>
-          <div class="fw-semibold">Rp {{ p.price.toLocaleString('id-ID') }}</div>
-        </div>
-        <a href="#" class="text-decoration-underline small">View All</a>
-      </div>
-
-          <!-- Best Selling -->
-    <div class="col-md-6 mb-5" id="best-selling">
-      <h4 class="fw-bold text-uppercase mb-4">Produk Populer</h4>
-      <div
-        class="d-flex align-items-center justify-content-between mb-3"
-        v-for="p in popularProducts"
-        :key="p.id"
-      >
-        <div class="d-flex align-items-center">
-          <img
-            :src="getImgUrl(p.image)"
-            :alt="p.name"
-            class="rounded"
-            style="width: 50px; height: 50px; object-fit: cover; margin-right: 15px;"
-          />
-          <div>
-            <a
-              href="#"
-              class="fw-semibold text-decoration-none"
-              @click.prevent="openModal(p)"
-              style="cursor: pointer;"
-            >
-              {{ p.name }}
-            </a>
-            <div class="text-muted small">Favorit Pengunjung Beanie.</div>
-          </div>
-        </div>
-        <div class="fw-semibold">Rp {{ p.price.toLocaleString('id-ID') }}</div>
-      </div>
-      <a href="#" class="text-decoration-underline small">View All</a>
-    </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Fitur Layanan -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="row text-center justify-content-center">
-      <div class="col-md-4 mb-4">
-        <i class="bi bi-cup-hot fs-1 text-warning mb-2"></i>
-        <h6 class="fw-bold">Pilihan Kopi Beragam</h6>
-        <p class="text-muted small">Nikmati berbagai varian kopi dari biji kopi pilihan terbaik lokal maupun internasional.</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <i class="bi bi-emoji-smile fs-1 text-warning mb-2"></i>
-        <h6 class="fw-bold">Pelayanan Ramah</h6>
-        <p class="text-muted small">Barista dan staf kami siap melayani dengan senyum dan keramahan setiap saat.</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <i class="bi bi-house-heart fs-1 text-warning mb-2"></i>
-        <h6 class="fw-bold">Tempat Estetik Indoor & Outdoor</h6>
-        <p class="text-muted small">Rasakan suasana nyaman dan estetik baik di dalam ruangan maupun area terbuka.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="orderModal"
-  tabindex="-1"
-  aria-labelledby="orderModalLabel"
-  aria-hidden="true"
-  ref="orderModalRef"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow rounded-4">
-      <!-- Header -->
-      <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title fw-semibold text-dark" id="orderModalLabel">
-          Konfirmasi Pemesanan
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          @click="closeModal"
-          aria-label="Tutup"
-        ></button>
-      </div>
-
-      <!-- Body -->
-      <div class="modal-body pt-2">
-        <p class="mb-2">Anda yakin ingin memesan:</p>
-
-        <!-- Daftar Produk yang Dipilih -->
-        <ul class="list-unstyled">
-          <li
-            v-for="(product, index) in selectedProducts"
-            :key="product.id"
-            class="d-flex align-items-center justify-content-between mb-2"
-          >
-            <div>
-              <h6 class="fw-bold text-warning mb-0">
-                {{ product.name }} <small>x{{ product.quantity || 1 }}</small>
-              </h6>
-              <p class="text-muted mb-0">
-                Harga: Rp {{
-                  (product.price * (product.quantity || 1)).toLocaleString('id-ID')
-                }}
-              </p>
-            </div>
-            <button class="btn btn-sm btn-danger" @click="removeProduct(index)">
-              Hapus
-            </button>
-          </li>
-        </ul>
-
-        <!-- Total Bayar -->
-        <div class="mb-3">
-          <h6>Total Bayar: Rp {{ totalPrice.toLocaleString('id-ID') }}</h6>
-        </div>
-
-        <!-- Pilih Meja -->
-        <div class="mb-3">
-          <label for="tableNumber" class="form-label fw-semibold">Pilih Meja</label>
-          <select id="tableNumber" v-model="tableNumber" class="form-select" required>
-            <option disabled value="">-- Pilih Meja --</option>
-            <option v-for="n in 5" :key="n" :value="n">Meja {{ n }}</option>
-          </select>
-        </div>
-
-        <!-- Pertanyaan Tambah Produk -->
-        <div class="mb-3">
-          <label class="form-label fw-semibold">Ingin tambah produk lain?</label>
-          <div class="d-flex gap-2">
-            <button
-              type="button"
-              class="btn btn-sm"
-              :class="showProductOptions === true ? 'btn-primary' : 'btn-outline-primary'"
-              @click="selectAddProduct(true)"
-            >
-              Ya
-            </button>
-            <button
-              type="button"
-              class="btn btn-sm"
-              :class="showProductOptions === false ? 'btn-primary' : 'btn-outline-secondary'"
-              @click="selectAddProduct(false)"
-            >
-              Tidak
-            </button>
-          </div>
-        </div>
-
-        <!-- Daftar produk tambahan -->
-        <div v-if="showProductOptions === true" class="mb-3">
-          <label class="form-label fw-semibold">Pilih Produk Lain:</label>
-          <div class="d-flex flex-wrap gap-3">
-            <div
-              v-for="product in products"
-              :key="product.id"
-              class="card shadow-sm border-0"
-              style="width: 120px; cursor: pointer;"
-              @click="selectProduct(product)"
-            >
-              <img
-                :src="getImgUrl(product.image)"
-                class="card-img-top"
-                alt="Gambar Produk"
-                style="height: 80px; object-fit: cover;"
-              />
-              <div class="card-body p-2 text-center">
-                <p class="card-text small fw-semibold mb-0">{{ product.name }}</p>
+    <!-- Testimonial Section -->
+    <section id="testimonial" class="py-5 text-center bg-light">
+      <div class="container">
+        <h2 class="mb-5 fw-bold">Apa Kata Mereka</h2>
+        <div class="row justify-content-center g-4">
+          <div class="col-md-4" v-for="(testi, idx) in testimonials" :key="idx">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <p class="card-text fst-italic">"{{ testi.text }}"</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 fw-semibold">
+                {{ testi.name }}
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Footer -->
-      <div class="modal-footer border-0 pt-0">
-        <button type="button" class="btn btn-secondary" @click="closeModal">
-          Batal
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          @click="confirmOrder"
-          :disabled="!tableNumber || showProductOptions === null || selectedProducts.length === 0"
-        >
-          Konfirmasi
-        </button>
+    <!-- Popular & New Sections -->
+    <section id="popular" class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <!-- New Arrivals -->
+          <div class="col-md-6 mb-5">
+            <h4 class="fw-bold text-uppercase mb-4">Produk Baru</h4>
+            <div
+              class="d-flex align-items-center justify-content-between mb-3"
+              v-for="p in newProducts"
+              :key="p.id"
+            >
+              <div class="d-flex align-items-center">
+                <img
+                  :src="getImgUrl(p.image)"
+                  :alt="p.name"
+                  class="rounded"
+                  style="width: 50px; height: 50px; object-fit: cover; margin-right: 15px;"
+                />
+                <div>
+                  <a
+                    href="#"
+                    class="fw-semibold text-decoration-none"
+                    @click.prevent="openModal(p)"
+                    style="cursor: pointer;"
+                  >
+                    {{ p.name }}
+                  </a>
+                  <div class="text-muted small">Kopi baru dengan cita rasa khas.</div>
+                </div>
+              </div>
+              <div class="fw-semibold">Rp {{ p.price.toLocaleString('id-ID') }}</div>
+            </div>
+            <a href="#" class="text-decoration-underline small">View All</a>
+          </div>
+
+          <!-- Best Selling -->
+          <div class="col-md-6 mb-5" id="best-selling">
+            <h4 class="fw-bold text-uppercase mb-4">Produk Populer</h4>
+            <div
+              class="d-flex align-items-center justify-content-between mb-3"
+              v-for="p in popularProducts"
+              :key="p.id"
+            >
+              <div class="d-flex align-items-center">
+                <img
+                  :src="getImgUrl(p.image)"
+                  :alt="p.name"
+                  class="rounded"
+                  style="width: 50px; height: 50px; object-fit: cover; margin-right: 15px;"
+                />
+                <div>
+                  <a
+                    href="#"
+                    class="fw-semibold text-decoration-none"
+                    @click.prevent="openModal(p)"
+                    style="cursor: pointer;"
+                  >
+                    {{ p.name }}
+                  </a>
+                  <div class="text-muted small">Favorit Pengunjung Beanie.</div>
+                </div>
+              </div>
+              <div class="fw-semibold">Rp {{ p.price.toLocaleString('id-ID') }}</div>
+            </div>
+            <a href="#" class="text-decoration-underline small">View All</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fitur Layanan -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row text-center justify-content-center">
+          <div class="col-md-4 mb-4">
+            <i class="bi bi-cup-hot fs-1 text-warning mb-2"></i>
+            <h6 class="fw-bold">Pilihan Kopi Beragam</h6>
+            <p class="text-muted small">Nikmati berbagai varian kopi dari biji kopi pilihan terbaik lokal maupun internasional.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="bi bi-emoji-smile fs-1 text-warning mb-2"></i>
+            <h6 class="fw-bold">Pelayanan Ramah</h6>
+            <p class="text-muted small">Barista dan staf kami siap melayani dengan senyum dan keramahan setiap saat.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="bi bi-house-heart fs-1 text-warning mb-2"></i>
+            <h6 class="fw-bold">Tempat Estetik Indoor & Outdoor</h6>
+            <p class="text-muted small">Rasakan suasana nyaman dan estetik baik di dalam ruangan maupun area terbuka.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="orderModal"
+      tabindex="-1"
+      aria-labelledby="orderModalLabel"
+      aria-hidden="true"
+      ref="orderModalRef"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow rounded-4">
+          <!-- Header -->
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title fw-semibold text-dark" id="orderModalLabel">
+              Konfirmasi Pemesanan
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              @click="closeModal"
+              aria-label="Tutup"
+            ></button>
+          </div>
+
+          <!-- Body -->
+          <div class="modal-body pt-2">
+            <p class="mb-2">Anda yakin ingin memesan:</p>
+
+            <!-- Daftar Produk yang Dipilih -->
+            <ul class="list-unstyled">
+              <li
+                v-for="product in groupedProducts"
+                :key="product.id"
+                class="d-flex align-items-center justify-content-between mb-2"
+              >
+                <div>
+                  <h6 class="fw-bold text-warning mb-0">
+                    {{ product.name }} <small>x{{ product.quantity }}</small>
+                  </h6>
+                  <p class="text-muted mb-0">
+                    Harga: Rp {{ (product.price * product.quantity).toLocaleString('id-ID') }}
+                  </p>
+                </div>
+                <button class="btn btn-sm btn-danger" @click="removeProduct(product.id)">
+                  Hapus
+                </button>
+              </li>
+            </ul>
+
+            <!-- Total Bayar -->
+            <div class="mb-3">
+              <h6>Total Bayar: Rp {{ totalPrice.toLocaleString('id-ID') }}</h6>
+            </div>
+
+            <!-- Pilih Meja -->
+            <div class="mb-3">
+              <label for="tableNumber" class="form-label fw-semibold">Pilih Meja</label>
+              <select id="tableNumber" v-model="tableNumber" class="form-select" required>
+                <option disabled value="">-- Pilih Meja --</option>
+                <option v-for="n in 5" :key="n" :value="n">Meja {{ n }}</option>
+              </select>
+            </div>
+
+            <!-- Pertanyaan Tambah Produk -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Ingin tambah produk lain?</label>
+              <div class="d-flex gap-2">
+                <button
+                  type="button"
+                  class="btn btn-sm"
+                  :class="showProductOptions === true ? 'btn-primary' : 'btn-outline-primary'"
+                  @click="selectAddProduct(true)"
+                >
+                  Ya
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm"
+                  :class="showProductOptions === false ? 'btn-primary' : 'btn-outline-secondary'"
+                  @click="selectAddProduct(false)"
+                >
+                  Tidak
+                </button>
+              </div>
+            </div>
+
+            <!-- Daftar produk tambahan -->
+            <div v-if="showProductOptions === true" class="mb-3">
+              <label class="form-label fw-semibold">Pilih Produk Lain:</label>
+              <div class="d-flex flex-wrap gap-3">
+                <div
+                  v-for="product in products"
+                  :key="product.id"
+                  class="card shadow-sm border-0"
+                  style="width: 120px; cursor: pointer;"
+                  @click="selectProduct(product)"
+                >
+                  <img
+                    :src="getImgUrl(product.image)"
+                    class="card-img-top"
+                    alt="Gambar Produk"
+                    style="height: 80px; object-fit: cover;"
+                  />
+                  <div class="card-body p-2 text-center">
+                    <p class="card-text small fw-semibold mb-0">{{ product.name }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-secondary" @click="closeModal">
+              Batal
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              @click="confirmOrder"
+              :disabled="!tableNumber || showProductOptions === null || groupedProducts.length === 0"
+            >
+              Konfirmasi
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </template>
 
 <script setup>
@@ -404,12 +344,21 @@ const products = ref([
   { id: 6, name: 'Cold Brew Coffee', price: 28000, image: 'kopi_cold brew.jpg', isPopular: true, isNew: false }
 ])
 
+const testimonials = ref([
+  { name: 'Sarah', text: 'Tempatnya nyaman, pilihan menunya banyak, dan suasananya bikin betah berlama-lama.' },
+  { name: 'Dimas Pratama', text: 'Kopi di sini benar-benar nikmat dan suasananya sangat nyaman untuk bekerja ataupun bersantai.' },
+  { name: 'Rina Maharani', text: 'Pelayanan ramah, tempatnya estetik, dan varian minumannya sangat beragam. Pasti akan kembali lagi!' },
+  { name: 'Andi Wijaya', text: 'Tempat favorit saya untuk ngopi pagi. Baristanya juga sangat berpengetahuan soal kopi.' },
+  { name: 'Melisa Putri', text: 'Suka banget sama desain interiornya. Estetik banget buat foto-foto dan nongkrong bareng teman.' },
+  { name: 'Budi Santoso', text: 'Harga terjangkau tapi kualitas premium. Sangat direkomendasikan untuk para pecinta kopi!' }
+])
+
 const popularProducts = computed(() => products.value.filter(p => p.isPopular))
 const newProducts     = computed(() => products.value.filter(p => p.isNew))
 
 // Modal state
 const selectedProduct = ref(null)
-const selectedProducts = ref([]) // Menyimpan produk yg dipilih
+const selectedProducts = ref([]) // Menyimpan produk yg dipilih (boleh duplikat)
 const orderModalRef = ref(null)
 let bsModal = null
 
@@ -419,9 +368,22 @@ const tableNumber = ref('')
 // Opsi tambah produk: true = ya, false = tidak, null = belum pilih
 const showProductOptions = ref(null)
 
+// Group produk by id dan hitung quantity
+const groupedProducts = computed(() => {
+  const map = new Map()
+  for (const p of selectedProducts.value) {
+    if (map.has(p.id)) {
+      map.get(p.id).quantity += 1
+    } else {
+      map.set(p.id, { ...p, quantity: 1 })
+    }
+  }
+  return Array.from(map.values())
+})
+
 // Total harga produk yg dipilih
 const totalPrice = computed(() =>
-  selectedProducts.value.reduce((sum, p) => sum + p.price, 0)
+  groupedProducts.value.reduce((sum, p) => sum + p.price * p.quantity, 0)
 )
 
 // Utility path gambar
@@ -432,7 +394,7 @@ function getImgUrl(fileName) {
 // Buka modal
 function openModal(product) {
   selectedProduct.value = product
-  selectedProducts.value = [product]  // reset produk yg dipilih ke produk awal
+  selectedProducts.value = [{ ...product }]
   tableNumber.value = ''
   showProductOptions.value = null
   if (!bsModal) {
@@ -446,27 +408,22 @@ function closeModal() {
   if (bsModal) bsModal.hide()
 }
 
-// function produk yang sama ditambahkan lebih dari sekali
+// Tambah produk ke keranjang (boleh duplikat, nanti dikelompokkan)
 function selectProduct(product) {
-  selectedProducts.value.push({ ...product }) // Salin agar dianggap objek baru meskipun ID sama
+  selectedProducts.value.push({ ...product })
 }
 
 // Pilih opsi tambah produk (ya/tidak)
 function selectAddProduct(choice) {
   showProductOptions.value = choice
-  // Jika pilih "Tidak", hapus produk tambahan yang mungkin sudah dipilih sebelumnya
-  if (choice === false) {
-    // Sisakan hanya produk pertama yg dipilih (produk utama)
-    if (selectedProducts.value.length > 1) {
-      selectedProducts.value = [selectedProducts.value[0]]
-    }
+  if (choice === false && selectedProducts.value.length > 1) {
+    selectedProducts.value = [selectedProducts.value[0]]
   }
 }
 
-// Fungsi hapus produk dari daftar selectedProducts berdasarkan index
-function removeProduct(index) {
-  selectedProducts.value.splice(index, 1)
-  // Jika tidak ada produk tersisa, reset pilihan tambah produk
+// Hapus semua produk dengan id tertentu
+function removeProduct(productId) {
+  selectedProducts.value = selectedProducts.value.filter(p => p.id !== productId)
   if (selectedProducts.value.length === 0) {
     showProductOptions.value = null
   }
@@ -478,32 +435,26 @@ async function confirmOrder() {
     alert('Silakan pilih nomor meja terlebih dahulu.')
     return
   }
-
   if (showProductOptions.value === null) {
     alert('Silakan pilih opsi apakah ingin tambah produk lain.')
     return
   }
-
-  if (showProductOptions.value === true && selectedProducts.value.length === 0) {
-    alert('Silakan pilih setidaknya satu produk tambahan.')
-    return
-  }
-
-  if (selectedProducts.value.length === 0) {
+  if (groupedProducts.value.length === 0) {
     alert('Tidak ada produk yang dipilih.')
     return
   }
 
   try {
     await axios.post('http://localhost:8000/api/orders', {
-      items: selectedProducts.value.map(p => ({
+      items: groupedProducts.value.map(p => ({
         name: p.name,
-        price: p.price
+        price: p.price,
+        quantity: p.quantity
       })),
       table_number: String(tableNumber.value)
     })
     closeModal()
-    alert(`Berhasil order ${selectedProducts.value.length} produk di Meja ${tableNumber.value}!`)
+    alert(`Berhasil order ${groupedProducts.value.length} produk di Meja ${tableNumber.value}!`)
   } catch (error) {
     handleError(error)
   }
