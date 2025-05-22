@@ -11,7 +11,7 @@
         <div class="d-flex justify-content-between align-items-center mb-1">
           <div>
             <!-- Jika tidak ada customer_name, bisa dihapus -->
-            <h5 class="card-title mb-0 text-primary">{{ order.customer_name || 'Pelanggan' }}</h5>
+            <h5 class="card-title mb-0 text-primary">{{ order.customer_name || 'Customer' }}</h5>
             <small class="text-secondary fst-italic">Meja: {{ order.table_number }}</small><br />
             <small class="text-secondary fst-italic">
               Waktu Pesan: {{ formatOrderTime(order.order_time || order.created_at) }}
